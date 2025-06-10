@@ -1,0 +1,6 @@
+-r base.txt
+black==25.1.0
+flake8==7.2.0
+isort==6.0.1
+ipdb==0.13.13
+pytest==8.4.0

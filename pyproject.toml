@@ -1,0 +1,51 @@
+[project]
+name = "package-sorter"
+version = "0.0.1"
+description = "Simple script to sort package based on your dimensions"
+authors = [{ name = "Xarpy"}]
+license = { text = "MIT" }
+readme = "README.md"
+keywords = ["challenge", "sorter", "package"]
+classifiers = ["Development Status :: 1-Alpha", "Programming Language :: Python"]
+requires-python = ">=3.12"
+dependencies = ["rich", "click"]
+
+[project.urls]
+homepage = "https://github.com/xarpy/agro-business-dashboard"
+
+[tool.dependencies]
+python = "^3.12.11"
+rich = "12.0.0"
+click = "8.0.3"
+toml = "0.10.2"
+
+[tool.dev-dependencies]
+black = "25.1.0"
+flake8 = "7.2.0"
+ipdb = "0.13.13"
+isort = "6.0.1"
+pytest = "8.4.0"
+
+[tool.black]
+line-length = 120
+exclude = ".git,__pycache__,__init__.py,.mypy_cache,.pytest_cache"
+
+[tool.isort]
+skip = [".gitignore"]
+extend_skip = [".md", ".json"]
+profile = "black"
+line_length = 120
+force_grid_wrap = 0
+use_parentheses = true
+multi_line_output = 3
+include_trailing_comma = true
+ensure_newline_before_comments = true
+
+[tool.pytest.ini_options]
+addopts = "--pdbcls=IPython.terminal.debugger:TerminalPdb"
+DJANGO_SETTINGS_MODULE="core.settings"
+python_functions = ["test"]
+log_cli = true
+log_level = "INFO"
+python_files = ["test_*.py", "*_test.py", "tests/*.py"]
+testpaths = ["tests"]

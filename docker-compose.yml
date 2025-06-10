@@ -1,0 +1,14 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: package_sorter
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - .:/app
+    restart: on-failure
+    stdin_open: true
+    tty: true
